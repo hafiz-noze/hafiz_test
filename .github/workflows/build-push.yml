@@ -20,10 +20,7 @@ jobs:
       - name: Get the version number
         id: vars
         run: echo "{{ github.event.head_commit.id }}"
-      - name: Build the image
-        run: docker build -t tazimtaz/flask-rabbitmq:{{ github.event.head_commit.id }} .
-      - name: Push the image
-        run: docker push tazimtaz/flask-rabbitmq:{{ github.event.head_commit.id }}
+
       - name: Build the latest docker image
         run: docker build -t tazimtaz/flask-rabbitmq:latest .
       - name: Push the latest docker image
