@@ -1,6 +1,8 @@
 FROM python:3.8-alpine
 
-RUN pip install -r requirements.txt
+RUN pip install pika
+
+RUN pip install flask
 
 COPY . .
 
